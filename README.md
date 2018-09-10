@@ -19,7 +19,7 @@ Azure Service Bus is an asynchronous messaging cloud platform that enables you t
 
 Refer to the [online documentation](https://azure.microsoft.com/services/service-bus/) to learn more about Service Bus.
 
-This library is built using .NET Standard 1.3. For more information on what platforms are supported see [.NET Platforms Support](https://docs.microsoft.com/en-us/dotnet/articles/standard/library#net-platforms-support).
+This library is built using .NET Standard 2.0, which means that the .NET Core 2.0 or .NET 4.6.1 runtimes are supported. For more information on what platforms are supported see [.NET Platforms Support](https://docs.microsoft.com/en-us/dotnet/articles/standard/library#net-platforms-support).
 
 ## How to provide feedback
 
@@ -53,8 +53,9 @@ Once you have completed the above, you can run `dotnet test` from the `/test/Mic
 
 ### Can I manage Service Bus entities with this library?
 
-The standard way to manage Azure resources is by using [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview). In order to use functionality that previously existed in the .NET Framework Service Bus client library, you will need to use the `Microsoft.Azure.Management.ServiceBus` library. This will enable use cases that dynamically create/read/update/delete resources. The following links will provide more information on the new library and how to use it.
+Yes 🙂 simply go
+```csharp
+var managementClient = new ManagementClient(connectionString);
+```
+and start managing your Azure Service Bus entities.
 
-* GitHub repo - [https://github.com/Azure/azure-sdk-for-net/tree/AutoRest/src/ResourceManagement/ServiceBus](https://github.com/Azure/azure-sdk-for-net/tree/AutoRest/src/ResourceManagement/ServiceBus)
-* NuGet package - [https://www.nuget.org/packages/Microsoft.Azure.Management.ServiceBus/](https://www.nuget.org/packages/Microsoft.Azure.Management.ServiceBus/)
-* Sample - [https://github.com/Azure-Samples/service-bus-dotnet-management](https://github.com/Azure-Samples/service-bus-dotnet-management)
